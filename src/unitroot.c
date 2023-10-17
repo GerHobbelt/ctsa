@@ -24,10 +24,10 @@ void ur_df(double *y, int N,const char* alternative, int *klag, double *statisti
     pval - p-value used to determine null hypothesis
 
     */
-    int lag,lags,N1,i,j,N2,p,k,pN,tN,Nout,iter;
-    double *x,*z,*res,*XX,*Y,*tt,*varcovar,*tablep;
+    int lag,lags,N1,i,j,N2,p,pN,tN,Nout,iter;
+    double *x,*z,*res,*XX,*Y,*tt,*varcovar = NULL,*tablep;
     reg_object fit;
-    double alpha,ssr,interp;
+    double alpha,interp;
     double nT[6] = {25, 50, 100, 250, 500, 100000};
     double prob[8] ={0.01, 0.025, 0.05, 0.10, 0.90, 0.95, 0.975, 0.99};
     double dftable[48] = {-4.38, -4.15, -4.04, -3.99, -3.98, -3.96,-3.95, -3.80, -3.73, -3.69, -3.68, -3.66,-3.60, -3.50, -3.45,
@@ -128,8 +128,8 @@ void ur_df(double *y, int N,const char* alternative, int *klag, double *statisti
 
 void ur_df2(double *y, int N,const char* type, int *lags,const char *selectlags,double *cval,int *cvrows, int *cvcols, double *cprobs, double *teststat,int *ltstat) {
     int lags_, lag, N1, N2,i,j,iter,p,ltmp,p1,p2,p3,rowselec,row1;
-    double *z, *x,*z_diff,*z_lag_1,*tt,*critRes,*z_diff_lag,*XX,*varcovar,*res,*XX2,*XX3;
-    reg_object fit, phi1_fit,phi2_fit,phi3_fit;
+    double *z, *x,*z_diff,*z_lag_1,*tt,*critRes,*XX,*varcovar = NULL,*res,*XX2,*XX3;
+    reg_object fit = NULL, phi1_fit,phi2_fit,phi3_fit;
     double alpha = 0.95;
     double ctemp,tau,scale,sos,dfs,phi1,phi2,phi3;
     double cval_tau1[18] = {-2.66, -1.95, -1.60,-2.62, -1.95, -1.61,-2.60, -1.95, -1.61,-2.58, -1.95, -1.62,

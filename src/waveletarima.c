@@ -4,7 +4,6 @@ void waveletarima(double *x, int N, char *wname, int levels,int p, int q, double
     wave_object obj;
 	wt_object wt;
     int d, Nused, M, retval, J, i;
-    double *phi, *theta;
     double *inp;
 
     d = 0;
@@ -23,10 +22,7 @@ void waveletarima(double *x, int N, char *wname, int levels,int p, int q, double
         inp = &wt->output[i*N];
 
     }
-    
 
     wave_free(obj);
     wt_free(wt);
-    free(phi);
-    free(theta);
 }

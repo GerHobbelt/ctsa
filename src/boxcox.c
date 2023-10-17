@@ -97,20 +97,13 @@ double boxcox_loglik(double lambda, void *params) {
 double boxcox(double *x, int N,double *lambda,double *y) {
     double *params;
     double lmbd,a,b;
-    int cc,cn;
+    int cc;
 
     // Check if x has all constant values
     cc = checkConstant(x,N);
 
     if (cc == 1) {
         printf("Input is a constant vector. Exiting. \n");
-        exit(-1);
-    }
-
-    // Check for negative values
-
-    if (cn == 1) {
-        printf("Input vector cannot have negative values. Exiting. \n");
         exit(-1);
     }
 

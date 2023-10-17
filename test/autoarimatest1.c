@@ -38,8 +38,6 @@ int main(void) {
 
 	FILE *ifp;
 	double temp[1200];
-    double temp1[1200];
-    double temp2[1200];
 
 	ifp = fopen("../data/seriesA.txt", "r");
 	i = 0;
