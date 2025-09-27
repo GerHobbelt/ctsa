@@ -18,7 +18,7 @@ extern "C" {
 	/*
 	ARIMA vs SARIMA
 	Typically you should use SARIMA if you are calculating seasonal models and ARIMA for non-seasonal models. However, ARIMA wil not work if the number of parameters p and q exceed 100.
-	For these extreme-case non-seasonal models, use SARIMA and set seasonal paramters to zero. SARIMA and ARIMA work identically for non-seasonal models otherwise.
+	For these extreme-case non-seasonal models, use SARIMA and set seasonal parameters to zero. SARIMA and ARIMA work identically for non-seasonal models otherwise.
 	*/
 
 typedef struct arima_set* arima_object;
